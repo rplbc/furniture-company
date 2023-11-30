@@ -2,7 +2,7 @@ import { animate } from 'motion'
 import { createFocusTrap } from 'focus-trap'
 import { lockBodyScroll, unlockBodyScroll } from '../../utils/scroll-toggle'
 
-export const initSearch = () => {
+const initSearch = () => {
   const searchDialog = document.querySelector<HTMLElement>('[data-dialog="search"]')!
   const dialogTriggers = document.querySelectorAll<HTMLButtonElement>('button[data-opens="search-dialog"]')
 
@@ -20,35 +20,24 @@ export const initSearch = () => {
     clickOutsideDeactivates: true,
   })
 
+  const activate = () => {
+    searchDialog.dataset.open = 'true'
+    return focusTrap.activate()
+  }
+
+  const deactivate = () => focusTrap.deactivate()
+
   dialogTriggers.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      /* 
-      we have to remove display:none from this element
-      so focustrap can find focusable elements
-      */
-      searchDialog.dataset.open = 'true'
-      focusTrap.activate()
-    })
+    btn.addEventListener('click', activate)
   })
 
   searchDialog.querySelectorAll<HTMLButtonElement>('button[type="reset"]').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      focusTrap.deactivate()
-    })
+    btn.addEventListener('click', deactivate)
   })
 
-  const activate = () => {
-    searchDialog.dataset.open = 'true'
-    focusTrap.activate()
-  }
-
-  const deactivate = () => {
-    focusTrap.deactivate()
-  }
-
-  if (searchDialog.dataset.open === 'true') {
-    activate()
-  }
+  if (searchDialog.dataset.open === 'true') activate()
 
   return { activate, deactivate, searchDialog, dialogTriggers }
 }
+
+export const searchModalController = initSearch()

@@ -6,9 +6,9 @@ import {
   initHeader,
   initProducts,
   initScrollTopButtons,
-  initSearch,
   initSliders,
   initVideos,
+  searchModalController,
 } from './features'
 
 // Init
@@ -18,10 +18,11 @@ import {
   initHeader()
   initProducts()
   initScrollTopButtons()
-  const { activate: activateSearch } = initSearch()
   initSliders()
   initVideos()
 
+  // Open search modal if URL has s parameter set to open
+  const { activate: activateSearch } = searchModalController
   const url = new URL(window.location.href)
   if (url.searchParams.get('s') === 'open') {
     activateSearch()
