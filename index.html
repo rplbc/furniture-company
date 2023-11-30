@@ -1,13 +1,23 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Furniture company</title>
+    <title>Furniture Company</title>
+    <meta name="description" content="Furniture Company" />
   </head>
-  <body>
-    <h1 class="text-3xl">Hello world!</h1>
+  <body class="bg-white text-black antialiased">
+    <include src="src/sections/header.html"></include>
+    <main>
+      <include src="src/sections/hero.html"></include>
+      <include src="src/sections/right-now.html"></include>
+      <include src="src/sections/personalized-items.html"></include>
+      <include src="src/sections/fritz-hansen-tribute.html"></include>
+      <include src="src/sections/life-partners.html"></include>
+      <include src="src/sections/opinions.html"></include>
+    </main>
+    <include src="src/sections/footer.html"></include>
+    <include src="src/sections/search.html"></include>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

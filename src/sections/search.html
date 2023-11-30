@@ -1,0 +1,64 @@
+<div
+  class="fixed inset-0 z-[99] hidden h-screen w-screen flex-col px-5 py-10 backdrop-blur-sm backdrop-brightness-50 data-[open='true']:flex"
+  data-dialog="search"
+  data-open="false"
+>
+  <div class="mx-auto flex h-full w-full max-w-3xl flex-col [&_a:hover]:underline" data-trap-root="">
+    <header class="relative flex w-full flex-none">
+      <form class="w-full" autocomplete="off">
+        <div
+          class="relative z-10 flex h-[3.125rem] items-center gap-5 overflow-hidden rounded-t-3xl bg-white text-black focus-within:ring-2"
+        >
+          <label for="dialog-search-input" class="sr-only">Search</label>
+          <input
+            id="dialog-search-input"
+            type="text"
+            placeholder="Search"
+            autofocus=""
+            class="h-full w-full pl-9 pr-16 outline-0 lg:pl-14"
+          />
+          <button
+            type="submit"
+            class="absolute left-0 top-0 flex h-full w-9 items-center justify-center rounded-full lg:w-14"
+          >
+            <svg
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 512 512"
+              height="1em"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"
+              />
+            </svg>
+            <span class="sr-only">Search</span>
+          </button>
+        </div>
+      </form>
+      <button type="reset" class="absolute right-0 top-0 z-10 h-full pr-4">
+        <kbd class="rounded bg-gray-100 px-1.5 py-1 text-xs font-semibold uppercase text-black shadow-sm"> Esc </kbd>
+      </button>
+    </header>
+
+    <div class="overflow-scroll rounded-b-3xl bg-white p-5 pl-9 lg:pl-14">
+      <a href="#" class="text-lg">All sofas</a>
+      <div class="mb-2.5 mt-5 text-xl font-bold">Categories</div>
+      <ul class="flex flex-col text-lg">
+        <li><a href="#" class="block py-2.5">Leather sofas</a></li>
+        <li><a href="#" class="block py-2.5">Divan sofas</a></li>
+        <li><a href="#" class="block py-2.5">Fabric sofas</a></li>
+        <li><a href="#" class="block py-2.5">Sofa beds</a></li>
+        <li><a href="#" class="block py-2.5">Daybeds</a></li>
+        <li><a href="#" class="block py-2.5">Futon sofas</a></li>
+        <li><a href="#" class="block py-2.5">Outdoor & balcony sofas</a></li>
+        <li><a href="#" class="block py-2.5">Cleaning & care products</a></li>
+        <li><a href="#" class="block py-2.5">Fabric sofas</a></li>
+        <li><a href="#" class="block py-2.5">Sofa beds</a></li>
+        <li><a href="#" class="block py-2.5">Daybeds</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
