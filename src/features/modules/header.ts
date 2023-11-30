@@ -7,7 +7,7 @@ export const initHeader = () => {
     burger.setAttribute('aria-expanded', `${isBurgerExpanded}`)
   }
 
-  burger.addEventListener('click', () => toggleBurger())
+  burger.addEventListener('click', toggleBurger)
 
   return toggleBurger
 }
