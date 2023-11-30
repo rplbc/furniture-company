@@ -1,10 +1,13 @@
 export const initHeader = () => {
   const burger = document.querySelector<HTMLButtonElement>('button[data-el="burger"]')!
-  let isBurgerExpanded = false
+  const isBurgerExpanded = () => burger.getAttribute('aria-expanded') === 'true'
 
   const toggleBurger = () => {
-    isBurgerExpanded = !isBurgerExpanded
-    burger.setAttribute('aria-expanded', `${isBurgerExpanded}`)
+    if (isBurgerExpanded()) {
+      burger.setAttribute('aria-expanded', 'false')
+    } else {
+      burger.setAttribute('aria-expanded', 'true')
+    }
   }
 
   burger.addEventListener('click', toggleBurger)

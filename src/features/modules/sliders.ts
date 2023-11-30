@@ -6,31 +6,21 @@ import 'swiper/css'
 import type { SwiperOptions } from 'swiper/types'
 
 export const initSliders = () => {
-  const sliderElements = document.querySelectorAll<HTMLElement>('.swiper')
+  const sliderElements = document.querySelectorAll<HTMLElement>('.swiper[data-swiper-args]')
 
   const initSlider = (el: HTMLElement): Swiper => {
-    const dataArgs = el.dataset.swiperArgs
+    const dataArgs = el.dataset.swiperArgs!
     const root = el.closest('[data-root]')
     let args: SwiperOptions = {
       modules: [Navigation, Scrollbar],
     }
 
-    if (dataArgs) {
-      try {
-        const newArgs = JSON.parse(dataArgs)
-        args = {
-          ...args,
-          ...newArgs,
-        }
-      } catch (e) {
-        console.log(e)
-      }
-    }
+    try {
+      const newArgs = JSON.parse(dataArgs)
+      let extraArgs = {}
 
-    if (root) {
-      try {
-        args = {
-          ...args,
+      if (root) {
+        extraArgs = {
           navigation: {
             nextEl: root.querySelector<HTMLElement>('[data-el="swiper-button-next"]'),
           },
@@ -39,9 +29,15 @@ export const initSliders = () => {
             hide: false,
           },
         }
-      } catch (e) {
-        console.log(e)
       }
+
+      args = {
+        ...args,
+        ...newArgs,
+        ...extraArgs,
+      }
+    } catch (e) {
+      console.log(e)
     }
 
     return new Swiper(el, args)
