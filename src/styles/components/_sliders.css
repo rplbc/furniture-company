@@ -1,0 +1,13 @@
+[data-el='swiper-scrollbar'] {
+  width: 100%;
+  height: calc(5rem / 16);
+  border-radius: 9999px;
+  background-color: var(--scrollbar-bg, #efefef);
+  overflow: hidden;
+}
+
+.swiper-scrollbar-drag {
+  height: 100%;
+  background-color: var(--scrollbar-drag-color, #000);
+  border-radius: inherit;
+}

@@ -1,0 +1,7 @@
+export * from './modules/animations'
+export * from './modules/header'
+export * from './modules/products'
+export * from './modules/scroll-top'
+export * from './modules/search'
+export * from './modules/sliders'
+export * from './modules/videos'

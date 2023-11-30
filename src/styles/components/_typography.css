@@ -1,0 +1,19 @@
+.text-h1 {
+  font-size: clamp(36px, calc(100vw * 76 / 1920), 76px);
+}
+
+.text-h2 {
+  font-size: clamp(30px, calc(100vw * 60 / 1920), 60px);
+}
+
+.text-h3 {
+  font-size: clamp(18px, calc(100vw * 23 / 1920), 23px);
+}
+
+.text-fluid-120 {
+  font-size: clamp(70px, calc(100vw * 120 / 1920), 120px);
+}
+
+.text-fluid-140 {
+  font-size: clamp(60px, calc(100vw * 140 / 1920), 140px);
+}

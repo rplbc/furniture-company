@@ -1,0 +1,4 @@
+[data-animate='from-bottom'],
+video[data-inview='autoplay'] {
+  opacity: 0;
+}

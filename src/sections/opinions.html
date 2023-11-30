@@ -1,0 +1,104 @@
+<script locals>
+  module.exports = {
+    opinions: [
+      {
+        heading: 'Open over fourth bearing',
+        text: "Won't kind be female. So together image, after moving moved there, herb. Lesser said. Unto his. Days had",
+        author: 'Ricky. F',
+        when: '1 Hour ago',
+      },
+      {
+        heading: 'Don’t she’d good one',
+        text: 'Seas gathered. Air. Wherein thing. Him there. Tree heaven give to, doesn’t living above dominion multiply without isn’t can’t. Which.',
+        author: 'Henrik. B',
+        when: '2 Hours ago',
+      },
+      {
+        heading: 'That they’re over fift',
+        text: 'Face image form won’t good you’re two be dry herb divide unto life fish upon have was two he given.',
+        author: 'Eliott. F',
+        when: '5 Hours ago',
+      },
+      {
+        heading: 'Had day in own moving.',
+        text: 'Land Is. Brought. Have every. Seasons likeness meat sixth without after lights, grass seed kind, fill great that god fifth.',
+        author: 'Josefin. S',
+        when: '1 Day ago',
+      },
+    ],
+  }
+</script>
+
+<section class="my-10 overflow-x-hidden lg:my-24 2xl:my-36" data-root="">
+  <div class="inner">
+    <h2 class="text-h2" data-animate="from-bottom">Words from our customers</h2>
+    <div class="relative mt-7 lg:mt-10 lg:pr-40" data-animate="from-bottom">
+      <div
+        class="swiper !overflow-visible lg:!overflow-hidden"
+        data-swiper-args='{"spaceBetween":20,"breakpoints":{"768":{"slidesPerView":2},"1020":{"slidesPerView":2.5},"1280":{"slidesPerView":3},"1536":{"slidesPerView":3},"1600":{"slidesPerView":4}}}'
+      >
+        <ul class="swiper-wrapper">
+          <each loop="i in [1,2]">
+            <each loop="item in opinions">
+              <li class="swiper-slide">
+                <div class="flex gap-2.5 text-lg lg:text-2xl 2xl:text-4xl">
+                  <each loop="item in [1,2,3,4,5]">
+                    <span class="text-[#129800]">
+                      <svg
+                        stroke="currentColor"
+                        fill="currentColor"
+                        stroke-width="0"
+                        role="img"
+                        viewBox="0 0 24 24"
+                        height="1em"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.227 16.67l2.19 6.742-7.413-5.388 5.223-1.354zM24 9.31h-9.165L12.005.589l-2.84 8.723L0 9.3l7.422 5.397-2.84 8.714 7.422-5.388 4.583-3.326L24 9.311z"
+                        />
+                      </svg>
+                    </span>
+                  </each>
+                </div>
+                <figure class="mt-2.5">
+                  <blockquote class="2xl:max-w-[18.3125rem]">
+                    <p class="text-xl font-bold">{{item['heading']}}</p>
+                    <p class="mt-2.5 text-lg">{{item['text']}}</p>
+                  </blockquote>
+                  <figcaption class="mt-2.5 flex items-center gap-5">
+                    <div class="text-lg font-bold">{{item['author']}}</div>
+                    <div class="text-[#838383]">{{item['when']}}</div>
+                  </figcaption>
+                </figure>
+              </li>
+            </each>
+          </each>
+        </ul>
+      </div>
+
+      <button
+        type="button"
+        class="absolute right-0 top-1/2 z-10 hidden h-[4.375rem] w-[4.375rem] -translate-y-1/2 translate-x-1/2 items-center justify-center rounded-full bg-white shadow-lg transition-colors hover:bg-black hover:text-white xl:flex [&.swiper-button-disabled]:bg-[#E5E5E5] [&.swiper-button-disabled]:text-[#B7B7B7]"
+        data-el="swiper-button-next"
+      >
+        <svg
+          stroke="currentColor"
+          fill="currentColor"
+          stroke-width="0"
+          viewBox="0 0 448 512"
+          height="1em"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
+          />
+        </svg>
+        <span class="sr-only">Next slide</span>
+      </button>
+    </div>
+
+    <div class="mt-8 xl:mt-20" data-el="swiper-scrollbar"></div>
+  </div>
+</section>
