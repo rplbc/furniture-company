@@ -5,6 +5,7 @@ import {
   initHeader,
   initProducts,
   initScrollTopButtons,
+  initSliders,
   initVideos,
   searchModalController,
 } from './features'
@@ -15,6 +16,7 @@ import {
   initHeader()
   initProducts()
   initScrollTopButtons()
+  initSliders()
   initVideos()
 
   // Open search modal if URL has s parameter set to open
@@ -23,9 +25,4 @@ import {
   if (url.searchParams.get('s') === 'open') {
     activateSearch()
   }
-})()
-
-// Lazy init
-;(async () => {
-  ;(await import('./features/modules/sliders')).initSliders()
 })()
