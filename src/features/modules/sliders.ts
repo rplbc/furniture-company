@@ -1,6 +1,8 @@
 import Swiper from 'swiper'
 import { Navigation, Scrollbar } from 'swiper/modules'
 
+import 'swiper/css'
+
 import type { SwiperOptions } from 'swiper/types'
 
 export const initSliders = () => {
