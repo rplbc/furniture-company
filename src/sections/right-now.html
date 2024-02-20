@@ -1,0 +1,72 @@
+<script locals>
+  module.exports = {
+    rnItems: [
+      { heading: 'Find your best deals', img: '/x1.webp' },
+      { heading: 'Kave Home in online & physical stores', img: '/x2.webp' },
+      { heading: 'Welcome to the event organized at the Hästens Store on December 8.', img: '/x3.webp' },
+    ],
+  }
+</script>
+
+<section class="my-10 overflow-x-hidden lg:my-24 2xl:my-36" data-root="">
+  <div class="inner">
+    <h2 class="text-h2" data-animate="from-bottom">Right now at Vepsaälainen</h2>
+
+    <div class="relative mt-7 lg:mt-10" data-animate="from-bottom">
+      <div
+        class="swiper !overflow-visible xl:!overflow-hidden"
+        data-swiper-args='{"spaceBetween":20,"breakpoints":{"320":{"slidesPerView":1.1,"spaceBetween":20},"768":{"slidesPerView":2,"spaceBetween":20},"1020":{"slidesPerView":2.5,"spaceBetween":20},"1280":{"slidesPerView":3,"spaceBetween":20},"1536":{"slidesPerView":3,"spaceBetween":32}}}'
+      >
+        <div class="swiper-wrapper">
+          <each loop="i in [1,2,3]">
+            <each loop="item in rnItems">
+              <div class="swiper-slide">
+                <a href="#" class="group relative block overflow-hidden rounded-[6px]" draggable="false">
+                  <div class="relative flex aspect-square items-end overflow-hidden bg-black">
+                    <img
+                      src="{{item['img']}}"
+                      alt="Image"
+                      class="h-full w-full object-cover object-center transition-[transform,filter] group-hover:scale-105 group-hover:brightness-125"
+                      decoding="async"
+                      loading="lazy"
+                      draggable="false"
+                    />
+                    <div
+                      class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50 transition-opacity group-hover:opacity-75"
+                    ></div>
+                  </div>
+                  <div class="absolute bottom-0 w-full p-5">
+                    <h3 class="text-plg text-2xl text-white">{{item['heading']}}</h3>
+                  </div>
+                </a>
+              </div>
+            </each>
+          </each>
+        </div>
+      </div>
+
+      <button
+        type="button"
+        class="absolute right-0 top-1/2 z-10 hidden h-[4.375rem] w-[4.375rem] -translate-y-1/2 translate-x-1/2 items-center justify-center rounded-full bg-white shadow-lg transition-colors hover:bg-black hover:text-white xl:flex [&.swiper-button-disabled]:bg-[#E5E5E5] [&.swiper-button-disabled]:text-[#B7B7B7]"
+        data-el="swiper-button-next"
+      >
+        <svg
+          stroke="currentColor"
+          fill="currentColor"
+          stroke-width="0"
+          viewBox="0 0 448 512"
+          height="1em"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
+          />
+        </svg>
+        <span class="sr-only">Next slide</span>
+      </button>
+    </div>
+
+    <div class="mt-8 xl:mt-20" data-el="swiper-scrollbar"></div>
+  </div>
+</section>

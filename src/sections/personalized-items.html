@@ -1,0 +1,167 @@
+<script locals>
+  module.exports = {
+    piItems: [
+      {
+        img: '/product1.webp',
+        label: 'FROM VEPS',
+        name: 'Levon sofa',
+        info: 'Soul fabric 381 grey, L 220 cm',
+        outlet: true,
+        price: '499,00 €',
+      },
+      {
+        img: '/product2.webp',
+        label: 'KAREN DESIGN',
+        name: 'Roots futon sofa',
+        info: 'Natural/black, L 140 cm, L 220 cm',
+        outlet: false,
+        price: '599,00 €',
+      },
+      {
+        img: '/product3.webp',
+        label: 'INNOVATION',
+        name: 'Splitback Frej sofa bed',
+        info: 'Bouclé 531 fabric/oak',
+        outlet: true,
+        price: '1756,00 €',
+      },
+      {
+        img: '/product4.webp',
+        label: 'HAVE HOME',
+        name: 'Mihaela divan sofa',
+        info: 'Natural/black, L 140 cm, L 220 cm',
+        outlet: true,
+        price: '1565,00 €',
+      },
+    ],
+  }
+</script>
+
+<section class="inner my-10 mt-20 lg:my-24 2xl:my-36" data-root="">
+  <div class="flex flex-wrap items-end justify-between gap-10" data-animate="from-bottom">
+    <h2 class="text-h2">Personalized items</h2>
+    <a href="#" class="group hidden items-center gap-2.5 text-lg font-bold lg:flex">
+      <span class="border-b-2 border-transparent transition-colors hover:border-current">Explore all offers</span>
+      <svg
+        stroke="currentColor"
+        fill="currentColor"
+        stroke-width="0"
+        viewBox="0 0 448 512"
+        height="1em"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+        class="transition-transform group-hover:translate-x-2"
+      >
+        <path
+          d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
+        />
+      </svg>
+    </a>
+  </div>
+
+  <div class="relative mt-7 lg:mt-10" data-animate="from-bottom">
+    <div
+      class="swiper rounded-[6px] border border-[#EBEBEB] xl:!overflow-hidden"
+      data-swiper-args='{"breakpoints":{"320":{"slidesPerView":2},"768":{"slidesPerView":3},"1020":{"slidesPerView":3},"1280":{"slidesPerView":3},"1536":{"slidesPerView":4}}}'
+    >
+      <div class="swiper-wrapper">
+        <each loop="i in [1,2]">
+          <each loop="item, j in piItems">
+            <div class="swiper-slide group/slide">
+              <div class="relative border-[#EBEBEB] group-[&:not(:first-of-type)]/slide:border-l">
+                <div class="relative flex aspect-square items-center justify-center">
+                  <img
+                    src="{{item['img']}}"
+                    alt="Image"
+                    class="h-full max-h-[75%] w-full max-w-[75%] object-contain object-center"
+                    decoding="async"
+                    loading="lazy"
+                    draggable="false"
+                  />
+                  <div class="absolute left-0 right-5 top-5 flex">
+                    <if condition="item['outlet']">
+                      <div
+                        class="flex h-auto items-center justify-center rounded-r-[6px] bg-red-600 px-2 text-xs uppercase text-white lg:h-7 lg:px-3 lg:text-sm"
+                      >
+                        Outlet
+                      </div>
+                    </if>
+                    <button
+                      type="button"
+                      class="group ml-auto text-xl transition-colors hover:text-red-600"
+                      data-favourite="{{item['name']}}"
+                      data-selected="{{j===0}}"
+                    >
+                      <svg
+                        stroke="currentColor"
+                        fill="currentColor"
+                        stroke-width="0"
+                        viewBox="0 0 512 512"
+                        height="1em"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          class="group-data-[selected='true']:opacity-0"
+                          d="M225.8 468.2l-2.5-2.3L48.1 303.2C17.4 274.7 0 234.7 0 192.8v-3.3c0-70.4 50-130.8 119.2-144C158.6 37.9 198.9 47 231 69.6c9 6.4 17.4 13.8 25 22.3c4.2-4.8 8.7-9.2 13.5-13.3c3.7-3.2 7.5-6.2 11.5-9c0 0 0 0 0 0C313.1 47 353.4 37.9 392.8 45.4C462 58.6 512 119.1 512 189.5v3.3c0 41.9-17.4 81.9-48.1 110.4L288.7 465.9l-2.5 2.3c-8.2 7.6-19 11.9-30.2 11.9s-22-4.2-30.2-11.9zM239.1 145c-.4-.3-.7-.7-1-1.1l-17.8-20c0 0-.1-.1-.1-.1c0 0 0 0 0 0c-23.1-25.9-58-37.7-92-31.2C81.6 101.5 48 142.1 48 189.5v3.3c0 28.5 11.9 55.8 32.8 75.2L256 430.7 431.2 268c20.9-19.4 32.8-46.7 32.8-75.2v-3.3c0-47.3-33.6-88-80.1-96.9c-34-6.5-69 5.4-92 31.2c0 0 0 0-.1 .1s0 0-.1 .1l-17.8 20c-.3 .4-.7 .7-1 1.1c-4.5 4.5-10.6 7-16.9 7s-12.4-2.5-16.9-7z"
+                        />
+                        <path
+                          class="text-red-600 group-data-[selected='false']:opacity-0"
+                          d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"
+                        />
+                      </svg>
+                      <span class="sr-only">
+                        <if condition="{{j===0}}"> Remove from favourites </if>
+                        <else> Add to favourites </else>
+                      </span>
+                    </button>
+                  </div>
+                </div>
+                <div class="p-5">
+                  <div class="text-sm uppercase">KAREN DESIGN</div>
+                  <h3 class="lg:text-xl">{{item['name']}}</h3>
+                  <h4 class="font-normal lg:text-lg">{{item['info']}}</h4>
+                  <div class="mt-5 flex gap-1">
+                    <div class="h-4 w-4 rounded-full border border-[#D9D9D9] bg-white"></div>
+                    <div class="h-4 w-4 rounded-full bg-red-200"></div>
+                    <div class="h-4 w-4 rounded-full bg-slate-300"></div>
+                    <div class="h-4 w-4 rounded-full bg-slate-400"></div>
+                    <div class="h-4 w-4 rounded-full bg-slate-500"></div>
+                  </div>
+                  <p class="mt-2.5 text-sm">+ 50 Variations</p>
+                  <p class="mt-2.5 text-lg font-bold">{{item['price']}}</p>
+                  <p class="mt-2.5 flex items-center gap-2.5 text-sm">
+                    <span class="h-3 w-3 bg-green-600"></span> In stock
+                  </p>
+                </div>
+              </div>
+            </div>
+          </each>
+        </each>
+      </div>
+    </div>
+
+    <button
+      type="button"
+      class="absolute right-0 top-1/2 z-10 hidden h-[4.375rem] w-[4.375rem] -translate-y-1/2 translate-x-1/2 items-center justify-center rounded-full bg-white shadow-lg transition-colors hover:bg-black hover:text-white xl:flex [&.swiper-button-disabled]:bg-[#E5E5E5] [&.swiper-button-disabled]:text-[#B7B7B7]"
+      data-el="swiper-button-next"
+    >
+      <svg
+        stroke="currentColor"
+        fill="currentColor"
+        stroke-width="0"
+        viewBox="0 0 448 512"
+        height="1em"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
+        />
+      </svg>
+      <span class="sr-only">Next slide</span>
+    </button>
+  </div>
+
+  <div class="mt-8 xl:mt-20" data-el="swiper-scrollbar"></div>
+</section>

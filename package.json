@@ -9,7 +9,19 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31",
+    "posthtml-expressions": "^1.11.3",
+    "prettier": "^3.1.0",
+    "prettier-plugin-tailwindcss": "^0.5.7",
+    "tailwindcss": "^3.3.5",
     "typescript": "^5.2.2",
     "vite": "^5.0.0"
+  },
+  "dependencies": {
+    "@vituum/vite-plugin-posthtml": "^1.1.0",
+    "focus-trap": "^7.5.4",
+    "motion": "^10.16.4",
+    "swiper": "^11.0.5"
   }
 }
